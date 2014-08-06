@@ -16,7 +16,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 	private static final String CONNECT = "connect";
 	private static final String SEND = "send";
 	private static final String MESSAGE = "message";
-	private CallbackContext callBack = null; 
+	private CallbackContext callbackContext = null; 
 	
 	public CordovaIrc () {}
 
@@ -32,8 +32,8 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 	//@Override
 	//public PluginResult execute(String action, JSONArray arg1, String arg2) {
-		if (this.callBack == null){
-			this.callBack = callbackContext;	
+		if (this.callbackContext == null){
+			this.callbackContext = callbackContext;	
 		}
 		if (action.contentEquals(CONNECT)){
 			if (!this.getIrcClient().isInit()){
@@ -76,8 +76,8 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		// TODO Auto-generated method stub
 		//PluginResult res = new PluginResult(PluginResult.Status.OK, args);
 		//res.setKeepCallback(true);
-		//this.success(res, this.callBack);
+		//this.success(res, this.callbackContext);
 		
-		callbackContext.success();
+		this.callbackContext.success();
 	}
 }
