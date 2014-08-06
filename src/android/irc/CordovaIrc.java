@@ -42,7 +42,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				try {
 					JSONObject obj = args.getJSONObject(0);
 					HashMap<String, Object> map = new HashMap<String, Object>();
-					map.put(constants.USER_NAME, obj.getString(constants.USER_NAME));
+					map.put(constants.USERNAME, obj.getString(constants.USERNAME));
 					map.put(constants.PASSWORD, obj.getString(constants.PASSWORD));
 					map.put(constants.PORT, Integer.valueOf(obj.getString(constants.PORT)));
 					map.put(constants.CHANNEL, obj.getString(constants.CHANNEL));

@@ -34,11 +34,11 @@ public class IrcClient extends PircBot implements ThreadBridge {
 	}
 	
 	public void init (HashMap<String, Object> map, ThreadBridge callback) {
-		this.setName((String) map.get("username"));
-		this.server = (String) map.get("server");
-		this.port = (Integer) map.get("port");
-		this.password = (String) map.get("password");
-		this.channel = (String) map.get("channel");
+		this.setName((String) map.get(constants.USERNAME));
+		this.server = (String) map.get(constants.SERVER);
+		this.port = (Integer) map.get(constants.PORT);
+		this.password = (String) map.get(constants.PASSWORD);
+		this.channel = (String) map.get(constants.CHANNEL);
 		this.bridge = callback;
 		this.isInit = true;
 	}
