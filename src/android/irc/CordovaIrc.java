@@ -2,13 +2,13 @@ package org.apache.cordova.plugin.irc;
 
 import java.util.HashMap;
 
-import org.apache.cordova.Plugin;
+import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class CordovaIrc extends Plugin implements ThreadBridge {
+public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 	
 	private IrcClient client;
 	private static final String CONNECT = "connect";
