@@ -36,7 +36,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		if (action.contentEquals(CONNECT)){
 			if (!this.getIrcClient().isInit()){
 				try {
-					JSONObject obj = arg.getJSONObject(0);
+					JSONObject obj = args.getJSONObject(0);
 					HashMap<String, Object> map = new HashMap<String, Object>();
 					map.put(constants.USER_NAME, obj.getString(constants.USER_NAME));
 					map.put(constants.PASSWORD, obj.getString(constants.PASSWORD));
@@ -55,7 +55,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		} else if (action.contentEquals(SEND)) {
 			JSONObject obj;
 			try {
-				obj = arg.getJSONObject(0);
+				obj = args.getJSONObject(0);
 				obj.put("type", "send_message");
 				this.getIrcClient().message(obj);
 			} catch (JSONException e) {
