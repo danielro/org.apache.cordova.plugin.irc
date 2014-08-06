@@ -20,9 +20,6 @@
     <param name="android-package" value="org.apache.cordova.plugin.irc.CordovaIrc"/>
       </feature>
     </config-file>
-
-
-    <source-file src="src/android/pircbot.jar" target-dir="libs" framework="true" />
     
     <source-file src="src/android/irc/constants.java" target-dir="src/org/apache/cordova/plugin/irc/" />
     <source-file src="src/android/irc/CordovaIrc.java" target-dir="src/org/apache/cordova/plugin/irc/" />
@@ -31,6 +28,7 @@
     <source-file src="src/android/irc/MainActivity.java" target-dir="src/org/apache/cordova/plugin/irc/" />
     <source-file src="src/android/irc/ThreadBridge.java" target-dir="src/org/apache/cordova/plugin/irc/" />
 
+    <source-file src="src/android/pircbot.jar" target-dir="lib" framework="true" />
     
   </platform>
   
