@@ -46,6 +46,10 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 					map.put(constants.CHANNEL, obj.getString(constants.CHANNEL));
 					map.put(constants.SERVER, obj.getString(constants.SERVER));
 					this.getIrcClient().init(map, this);
+
+					callbackContext.success(action);
+        			return true;
+
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -65,18 +69,13 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				e.printStackTrace();
 			}
 		}
-        //PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
-        //r.setKeepCallback(true);
-        //return r;
+		return false;
+
         callbackContext.success(action);
         return true;
 	}
 
 	public void message(JSONObject args) {
-		// TODO Auto-generated method stub
-		//PluginResult res = new PluginResult(PluginResult.Status.OK, args);
-		//res.setKeepCallback(true);
-		//this.success(res, this.callbackContext);
 		
 		this.callbackContext.success();
 	}
