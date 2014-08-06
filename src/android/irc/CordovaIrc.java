@@ -16,7 +16,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 	private static final String CONNECT = "connect";
 	private static final String SEND = "send";
 	private static final String MESSAGE = "message";
-	private String callBack = null; 
+	private CallbackContext callBack = null; 
 	
 	public CordovaIrc () {}
 
