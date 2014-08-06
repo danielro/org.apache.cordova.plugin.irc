@@ -22,7 +22,7 @@
     </config-file>
 
 
-    <source-file src="src/android/pircbot.jar" framework="true" />
+    <source-file src="src/android/pircbot.jar" target-dir="libs" framework="true" />
     
     <source-file src="src/android/irc/constants.java" target-dir="src/org/apache/cordova/plugin/irc/" />
     <source-file src="src/android/irc/CordovaIrc.java" target-dir="src/org/apache/cordova/plugin/irc/" />
