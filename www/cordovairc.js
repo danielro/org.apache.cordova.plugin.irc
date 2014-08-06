@@ -1,16 +1,14 @@
-var cordovairc = function () {};
 
-cordovairc.prototype.connect = function (callback, args) {
-	cordova.exec(callback, function(err){alert(err);},'CordovaIrc', 'connect', args);
-};
+var exec = require("cordova/exec");
 
-cordovairc.prototype.send = function (args) {
-	cordova.exec(function(res){}, function(err){alert(err);},'CordovaIrc', 'send', args);
-};
+var irc = {
+    connect: function (callback, args) {
+        exec(callback, function(err){alert(err);},'CordovaIrc', 'connect', args);
+    },
 
-if(!window.plugins) {
-    window.plugins = {};
+    send: function (args) {
+        exec(function(res){}, function(err){alert(err);},'CordovaIrc', 'send', args);
+    },
 }
-if (!window.plugins.cordovairc) {
-    window.plugins.cordovairc = new cordovairc();
-}
+
+module.exports = irc;
