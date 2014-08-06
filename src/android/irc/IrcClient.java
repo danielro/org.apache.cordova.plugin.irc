@@ -34,7 +34,7 @@ public class IrcClient extends PircBot implements ThreadBridge {
 	}
 	
 	public void init (HashMap<String, Object> map, ThreadBridge callback) {
-		this.setName((String) map.get("userName"));
+		this.setName((String) map.get("username"));
 		this.server = (String) map.get("server");
 		this.port = (Integer) map.get("port");
 		this.password = (String) map.get("password");
@@ -53,19 +53,15 @@ public class IrcClient extends PircBot implements ThreadBridge {
 			obj.put("connected", "true");
 			bridge.message(obj);
 		} catch (NickAlreadyInUseException e) {
-			// TODO Auto-generated catch block
-			bridge.message("NickAlreadyInUseException");
+			bridge.message("ERROR: Nick is already in use.");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			bridge.message("IOException");
 			e.printStackTrace();
 		} catch (IrcException e) {
-			// TODO Auto-generated catch block
 			bridge.message("IrcException");
 			e.printStackTrace();
 		} catch (JSONException e) {
-			// TODO Auto-generated catch block
 			bridge.message("NickAlreadyInUseException");
 			e.printStackTrace();
 		}
