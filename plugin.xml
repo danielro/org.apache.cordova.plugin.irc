@@ -10,7 +10,7 @@
   <keywords>cordova,irc</keywords>
   
   <js-module src="www/cordovairc.js" name="cordovairc">
-    <clobbers target="navigator.irc" />
+    <clobbers target="window.plugins" />
   </js-module>
   
   <!-- android -->
