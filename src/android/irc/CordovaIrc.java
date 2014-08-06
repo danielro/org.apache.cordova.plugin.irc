@@ -78,4 +78,8 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		this.callbackContext.success( args );
 	}
 
+	public void message(String args) {
+		this.callbackContext.success( args );
+	}
+
 }

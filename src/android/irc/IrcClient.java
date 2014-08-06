@@ -53,30 +53,19 @@ public class IrcClient extends PircBot implements ThreadBridge {
 			bridge.message(obj);
 		} catch (NickAlreadyInUseException e) {
 			// TODO Auto-generated catch block
-			JSONObject obj = new JSONObject();
-			obj.put("type", "NickAlreadyInUseException");
-			bridge.message(obj);
+			bridge.message("NickAlreadyInUseException");
 			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			JSONObject obj = new JSONObject();
-			obj.put("type", "IOException");
-			bridge.message(obj);
-			e.printStackTrace();
+			bridge.message("IOException");
 			e.printStackTrace();
 		} catch (IrcException e) {
 			// TODO Auto-generated catch block
-			JSONObject obj = new JSONObject();
-			obj.put("type", "IrcException");
-			bridge.message(obj);
-			e.printStackTrace();
+			bridge.message("IrcException");
 			e.printStackTrace();
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
-			JSONObject obj = new JSONObject();
-			obj.put("type", "JSONException");
-			bridge.message(obj);
-			e.printStackTrace();
+			bridge.message("NickAlreadyInUseException");
 			e.printStackTrace();
 		}
 	}
@@ -115,5 +104,9 @@ public class IrcClient extends PircBot implements ThreadBridge {
 			//TODO
 			ex.printStackTrace();
 		}
+	}
+
+	public void message(String msg){
+		// wtv
 	}
 }
