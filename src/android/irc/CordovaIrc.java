@@ -25,15 +25,18 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		return client;
 	}
 	
+
+	@Override
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 	//@Override
-	public PluginResult execute(String action, JSONArray arg1, String arg2) {
+	//public PluginResult execute(String action, JSONArray arg1, String arg2) {
 		if (this.callBack == null){
-			this.callBack = arg2;	
+			this.callBack = callbackContext;	
 		}
 		if (action.contentEquals(CONNECT)){
 			if (!this.getIrcClient().isInit()){
 				try {
-					JSONObject obj = arg1.getJSONObject(0);
+					JSONObject obj = arg.getJSONObject(0);
 					HashMap<String, Object> map = new HashMap<String, Object>();
 					map.put(constants.USER_NAME, obj.getString(constants.USER_NAME));
 					map.put(constants.PASSWORD, obj.getString(constants.PASSWORD));
@@ -52,7 +55,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		} else if (action.contentEquals(SEND)) {
 			JSONObject obj;
 			try {
-				obj = arg1.getJSONObject(0);
+				obj = arg.getJSONObject(0);
 				obj.put("type", "send_message");
 				this.getIrcClient().message(obj);
 			} catch (JSONException e) {
@@ -60,9 +63,11 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				e.printStackTrace();
 			}
 		}
-        PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
-        r.setKeepCallback(true);
-        return r;
+        //PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
+        //r.setKeepCallback(true);
+        //return r;
+        callbackContext.success(action);
+        return true;
 	}
 
 	public void message(JSONObject args) {
