@@ -48,7 +48,9 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 					this.getIrcClient().init(map, this);
 
 					callbackContext.success(action);
-					this.message("shalom");
+					callbackContext.success("first test");
+					this.callbackContext.success("second test");
+					this.message("third test");
         			return true;
 
 				} catch (JSONException e) {
