@@ -68,16 +68,17 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
         //PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
         //r.setKeepCallback(true);
         //return r;
-        callbackContext.success(args.getJSONObject(0).getString(constants.CHANNEL));
+        callbackContext.success(action);
         return true;
 	}
 
 	public void message(JSONObject args) {
 		// TODO Auto-generated method stub
-		PluginResult res = new PluginResult(PluginResult.Status.OK, args);
-		res.setKeepCallback(true);
+		//PluginResult res = new PluginResult(PluginResult.Status.OK, args);
+		//res.setKeepCallback(true);
 		//this.success(res, this.callBack);
-		// TODO just commented out the previous line because I don't know how to
-		// do it properly with CordovaPlugin
+		
+		callbackContext.success();
+		return true;
 	}
 }
