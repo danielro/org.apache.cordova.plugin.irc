@@ -25,7 +25,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		return client;
 	}
 	
-	@Override
+	//@Override
 	public PluginResult execute(String action, JSONArray arg1, String arg2) {
 		if (this.callBack == null){
 			this.callBack = arg2;	
@@ -69,6 +69,6 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		// TODO Auto-generated method stub
 		PluginResult res = new PluginResult(PluginResult.Status.OK, args);
 		res.setKeepCallback(true);
-		this.success(res, this.callBack);
+		this.callbackContext.success(res, this.callBack);
 	}
 }
