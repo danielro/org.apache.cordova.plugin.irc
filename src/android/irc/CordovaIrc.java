@@ -3,6 +3,8 @@ package org.apache.cordova.plugin.irc;
 import java.util.HashMap;
 
 import org.apache.cordova.CordovaPlugin;
+import org.apache.cordova.CallbackContext;
+//TODO remove next PluginResult
 import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
