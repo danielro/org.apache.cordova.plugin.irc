@@ -69,6 +69,8 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 		// TODO Auto-generated method stub
 		PluginResult res = new PluginResult(PluginResult.Status.OK, args);
 		res.setKeepCallback(true);
-		this.success(res, this.callBack);
+		//this.success(res, this.callBack);
+		// TODO just commented out the previous line because I don't know how to
+		// do it properly with CordovaPlugin
 	}
 }
