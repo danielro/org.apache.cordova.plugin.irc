@@ -36,6 +36,8 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 			this.callbackContext = callbackContext;	
 		}
 		if (action.contentEquals(CONNECT)){
+
+			// Initialize the IRC client if not already done
 			if (!this.getIrcClient().isInit()){
 				try {
 					JSONObject obj = args.getJSONObject(0);
@@ -46,20 +48,20 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 					map.put(constants.CHANNEL, obj.getString(constants.CHANNEL));
 					map.put(constants.SERVER, obj.getString(constants.SERVER));
 					this.getIrcClient().init(map, this);
-
-					this.message(action);
-					this.message("test");
-					this.message(action);
-        			return true;
-
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
+
+			// Then start it
 			if (!this.getIrcClient().isConnected()) {
 				new IrcThread().start();
 			}
+
+			this.message(action);
+			return true;
+
 		} else if (action.contentEquals(SEND)) {
 			JSONObject obj;
 			try {
