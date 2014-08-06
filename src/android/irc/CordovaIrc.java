@@ -69,10 +69,9 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				e.printStackTrace();
 			}
 		}
-		return false;
 
-        callbackContext.success(action);
-        return true;
+        callbackContext.error(action);
+        return false;
 	}
 
 	public void message(JSONObject args) {
