@@ -1,4 +1,4 @@
-package org.ogray.android.irc;
+package org.apache.cordova.plugin.irc;
 
 public class constants {
 	public static final String USER_NAME = "userName";

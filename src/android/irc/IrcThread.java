@@ -1,4 +1,4 @@
-package org.ogray.android.irc;
+package org.apache.cordova.plugin.irc;
 
 import android.os.AsyncTask;
 import android.util.Log;
