@@ -45,6 +45,7 @@ public class IrcClient extends PircBot implements ThreadBridge {
 	
 	public void Connect () {
 		try {
+			bridge.message('trying to connect...');
 			this.connect(this.server);
 			this.joinChannel(this.channel);
 			JSONObject obj = new JSONObject();
