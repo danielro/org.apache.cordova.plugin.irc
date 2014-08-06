@@ -68,7 +68,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
         //PluginResult r = new PluginResult(PluginResult.Status.NO_RESULT);
         //r.setKeepCallback(true);
         //return r;
-        callbackContext.success(args.getJSONObject(0).getString(constants.USER_NAME));
+        callbackContext.success(args.getJSONObject(0).getString(constants.CHANNEL));
         return true;
 	}
 
