@@ -66,6 +66,9 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				obj = args.getJSONObject(0);
 				obj.put("type", "send_message");
 				this.getIrcClient().message(obj);
+				
+				return true;
+
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
