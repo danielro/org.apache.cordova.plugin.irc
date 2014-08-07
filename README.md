@@ -45,8 +45,6 @@ function callback (response) {
 
 This method sends a message to the channel to which we are connected.
 ```javascript
-$('#send').click(function(){
-    var message = $('#message').val();
-    window.plugins.irc.send([{'contents' : message}]);
-});
+var message = $('#message').val();
+window.plugins.irc.send([{'contents' : message}]);
 ```
