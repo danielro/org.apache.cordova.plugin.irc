@@ -18,33 +18,35 @@ This plugin provides two methods, `window.plugins.irc.connect` and `window.plugi
 
 This method takes a callback function, to be called whenever a message a received, and the connection parameters.
 
-    var args = [{
-        username : "testuser123",
-        password : "",
-        channel : "#android",
-        server : "irc.freenode.net",
-        port : "6667",
-    }];
+```javascript
+var args = [{
+    username : "testuser123",
+    password : "",
+    channel : "#android",
+    server : "irc.freenode.net",
+    port : "6667",
+}];
 
-    window.plugins.irc.connect(callback, args);
+window.plugins.irc.connect(callback, args);
 
-    function callback (response) {
-        var channel  = response.channel;
-        var login    = response.login;
-        var sender   = response.sender;
-        var hostname = response.hostname;
-        var message  = response.message;
+function callback (response) {
+    var channel  = response.channel;
+    var login    = response.login;
+    var hostname = response.hostname;
+    var sender   = response.sender;
+    var message  = response.message;
 
-        $('#irc').append('<br/>'+sender+': '+message);
-    }
+    $('#irc').append('<br/>'+sender+': '+message);
+}
+```
 
 
 #### window.plugins.irc.send
 
 This method sends a message to the channel to which we are connected.
-
-    $('#send').click(function(){
-
-        var message = $('#message').val();
-        window.plugins.irc.send([{'contents' : message}]);
-    });
+```javascript
+$('#send').click(function(){
+    var message = $('#message').val();
+    window.plugins.irc.send([{'contents' : message}]);
+});
+```
