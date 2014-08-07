@@ -14,7 +14,7 @@ This plugin is very limited in what it can do. It can only connect to one channe
 
 This plugin provides two methods, `window.plugins.irc.connect` and `window.plugins.irc.send`.
 
-### window.plugins.irc.connect
+#### window.plugins.irc.connect
 
 This method takes a callback function, to be called whenever a message a received, and the connection parameters.
 
@@ -39,7 +39,7 @@ This method takes a callback function, to be called whenever a message a receive
     }
 
 
-### window.plugins.irc.send
+#### window.plugins.irc.send
 
 This method sends a message to the channel to which we are connected.
 
