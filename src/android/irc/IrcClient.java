@@ -77,6 +77,7 @@ public class IrcClient extends PircBot implements ThreadBridge {
 			obj.put("type", "message");
 			obj.put("channel", channel);
 			obj.put("login", login);
+			obj.put("sender", sender);
 			obj.put("hostname", hostname);
 			obj.put("message", message);
 			bridge.message(obj);
