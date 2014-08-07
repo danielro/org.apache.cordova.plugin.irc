@@ -58,9 +58,6 @@ public class IrcClient extends PircBot implements ThreadBridge {
 		} catch (IrcException e) {
 			bridge.message("IrcException");
 			e.printStackTrace();
-		} catch (JSONException e) {
-			bridge.message("NickAlreadyInUseException");
-			e.printStackTrace();
 		}
 	}
 	
