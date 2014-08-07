@@ -48,10 +48,7 @@ public class IrcClient extends PircBot implements ThreadBridge {
 			bridge.message("trying to connect...");
 			this.connect(this.server);
 			this.joinChannel(this.channel);
-			JSONObject obj = new JSONObject();
-			obj.put("type", "connected");
-			obj.put("connected", "true");
-			bridge.message(obj);
+			bridge.message("connection established");
 		} catch (NickAlreadyInUseException e) {
 			bridge.message("ERROR: Nick is already in use.");
 			e.printStackTrace();
@@ -104,6 +101,6 @@ public class IrcClient extends PircBot implements ThreadBridge {
 	}
 
 	public void message(String msg){
-		// wtv
+		// not used
 	}
 }

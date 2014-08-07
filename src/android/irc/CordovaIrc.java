@@ -30,8 +30,7 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 
 	@Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-	//@Override
-	//public PluginResult execute(String action, JSONArray arg1, String arg2) {
+
 		if (this.callbackContext == null){
 			this.callbackContext = callbackContext;	
 		}
@@ -59,7 +58,6 @@ public class CordovaIrc extends CordovaPlugin implements ThreadBridge {
 				new IrcThread().start();
 			}
 
-			this.message(action);
 			return true;
 
 		} else if (action.contentEquals(SEND)) {
