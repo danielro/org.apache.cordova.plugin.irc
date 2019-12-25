@@ -1,0 +1,28 @@
+{
+  "name": "cordova-plugin-irc",
+  "version": "0.2.0",
+  "description": "A simple IRC plugin for cordova",
+  "cordova": {
+    "id": "cordova-plugin-irc",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielro/org.apache.cordova.plugin.irc"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "irc",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Unknown",
+  "license": "Apache-2",
+  "bugs": {
+    "url": "https://github.com/danielro/org.apache.cordova.plugin.irc/issues"
+  },
+  "homepage": "https://github.com/danielro/org.apache.cordova.plugin.irc"
+}
